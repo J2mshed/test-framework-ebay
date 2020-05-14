@@ -18,7 +18,7 @@ Feature: Add items to cart
     And I click on 'Continue as guest' button on Verifications page
     And I am on Guest Checkout page
     And Page contains '<itemName>' itemName on Checkout page
-#    And I change the quantity of item to '<quantity>' on Checkout page
+    And I change the quantity of item to '<quantity>' on Checkout page
     And I set '<firstName>' as first name on Checkout page
     And I set '<lastName>' as last name on Checkout page
     And I set '<streetAddress>' as Street address on Checkout page

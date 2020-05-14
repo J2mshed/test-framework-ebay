@@ -1,10 +1,13 @@
 package com.ebay.pageObjects;
 
 import com.ebay.BasePage;
+import com.ebay.CucumberHooks;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 import static com.ebay.helpers.ElementsInteraction.getWait;
 import static com.ebay.helpers.ElementsInteraction.sendKeys;
@@ -25,12 +28,16 @@ public class GuestCheckoutPage extends BasePage {
         getWait().until(ExpectedConditions.visibilityOfElementLocated(itemName));
     }
 
-    /*    @Then("^I change the quantity of item to '(.*)' on Checkout page$")
+       @Then("^I change the quantity of item to '(.*)' on Checkout page$")
         public void iChangeTheQuantity(String quantity) {
-    //        By quantityOfItem = (By.xpath("//select[@data-test-id='CART_DETAILS_ITEM_QUANTITY']"));
-            Select select = new Select(By.xpath("//select[@data-test-id='CART_DETAILS_ITEM_QUANTITY']"));
-            select.selectByValue(quantity);
-
+//        By quantityOfItem = (By.xpath("//select[@data-test-id='CART_DETAILS_ITEM_QUANTITY']"));
+//           Select select = new Select((WebElement) By.xpath("//select[@data-test-id='CART_DETAILS_ITEM_QUANTITY']"));
+//           select.selectByValue(quantity);
+           Select select = new Select(CucumberHooks.getDriver()
+                   .findElement(By.xpath("//select[@data-test-id='CART_DETAILS_ITEM_QUANTITY']")));
+           select.selectByVisibleText(quantity);
+       }
+/*
 
     //        getWait().until(ExpectedConditions.visibilityOfElementLocated(quantityOfItem));
         }
