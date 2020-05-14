@@ -1,5 +1,6 @@
 package com.ebay.pageObjects;
 
+import com.ebay.BasePage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static com.ebay.helpers.ElementsInteraction.click;
 import static com.ebay.helpers.ElementsInteraction.getWait;
 
-public class ContinueToSignInOrAsGuest {
+public class ContinueToSignInOrAsGuest extends BasePage {
     public void isPageOpened() {
         getWait().until(ExpectedConditions.elementToBeClickable(By.id("signin-btn")));
     }

@@ -1,5 +1,6 @@
 package com.ebay.pageObjects;
 
+import com.ebay.BasePage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static com.ebay.helpers.ElementsInteraction.click;
 import static com.ebay.helpers.ElementsInteraction.getWait;
 
-public class YouAreAlmostDoneForm {
+public class YouAreAlmostDoneForm extends BasePage{
 
     public void isPageOpened(){
         getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ADDON_0']/div/div[2]/div/div[4]/a")));

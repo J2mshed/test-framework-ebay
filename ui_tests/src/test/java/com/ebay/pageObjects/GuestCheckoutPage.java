@@ -1,5 +1,6 @@
 package com.ebay.pageObjects;
 
+import com.ebay.BasePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static com.ebay.helpers.ElementsInteraction.getWait;
 import static com.ebay.helpers.ElementsInteraction.sendKeys;
 
-public class GuestCheckoutPage {
+public class GuestCheckoutPage extends BasePage {
     public void isPageOpened() {
         getWait().until(ExpectedConditions.titleContains("Checkout | eBay"));
     }
