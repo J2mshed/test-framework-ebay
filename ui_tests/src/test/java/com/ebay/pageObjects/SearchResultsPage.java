@@ -31,7 +31,7 @@ public class SearchResultsPage extends BasePage {
 
 
     @And("^I click on '(.*)' item name on Search results page$")
-    public ItemsPage iClickOnCourseNameOnSearchResultsPage(String itemName) {
+    public ItemsPage iClickOnItemNameOnSearchResultsPage(String itemName) {
 //        click(By.xpath("//div[.='" + courseName + "']"));
         click(By.xpath(String.format("//a[.='%s']", itemName)));
         return new ItemsPage();

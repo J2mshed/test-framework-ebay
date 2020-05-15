@@ -19,6 +19,7 @@ Feature: Add items to cart
     And I am on Guest Checkout page
     And Page contains '<itemName>' itemName on Checkout page
     And I change the quantity of item to '<quantity>' on Checkout page
+    And I select '<country>' as ship country on Checkout page
     And I set '<firstName>' as first name on Checkout page
     And I set '<lastName>' as last name on Checkout page
     And I set '<streetAddress>' as Street address on Checkout page
@@ -26,5 +27,5 @@ Feature: Add items to cart
 
     
   Scenarios:
-    | searchKeyword | itemName  | price | quantity| firstName | lastName| streetAddress|
-    | duracell      | 6 x 76A Duracell 1.5V Alkaline Button Batteries (LR44, A76, EPX76, PX76A, V136A) | 8.07 | 5 | Jon| Johnson| 1521 Ocean Avenue, B4|
+    | searchKeyword | itemName  | price | quantity| country | firstName | lastName| streetAddress|
+    | duracell      | 6 x 76A Duracell 1.5V Alkaline Button Batteries (LR44, A76, EPX76, PX76A, V136A) | 8.07 | 5 | Tajikistan | Jon|  Johnson | 1521 Ocean Avenue, B4|

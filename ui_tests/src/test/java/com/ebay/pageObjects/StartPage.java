@@ -26,7 +26,7 @@ public class StartPage extends BasePage {
 //    other step definitions go here
 
     @When("^I set '(.*)' as search criteria on Start page$")
-    public void iSetJavaAsSearchCriteriaOnStartPage(String searchCriteria) {
+    public void iSetItemAsSearchCriteriaOnStartPage(String searchCriteria) {
         sendKeys(By.id("gh-ac"), searchCriteria);
     }
 
