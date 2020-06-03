@@ -7,8 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-import static com.ebay.helpers.ElementsInteraction.getWait;
-import static com.ebay.helpers.ElementsInteraction.sendKeys;
+import static com.ebay.helpers.ElementsInteraction.*;
 
 public class GuestCheckoutPage extends BasePage {
     public void isPageOpened() {
@@ -56,9 +55,46 @@ public class GuestCheckoutPage extends BasePage {
         sendKeys(By.id("lastName"), lastName);
     }
 
-    @And("^I set '(.*)' as Street address on Checkout page$")
+    @And("^I set '(.*)' as street address on Checkout page$")
     public void iSetStreetAddress(String streetAddress) {
         sendKeys(By.id("addressLine1"), streetAddress);
     }
 
+    @And("^I set '(.*)' as city on Checkout page$")
+    public void iSetCity(String city) {
+        sendKeys(By.id("city"), city);
+    }
+
+    @And("^I select '(.*)' as states on Checkout page$")
+    public void iSelectStates(String state) {
+        Select select = new Select(CucumberHooks.getDriver()
+                .findElement(By.id(String.format("stateOrProvince", state))));
+        select.selectByVisibleText(state);
+    }
+
+    @And("^I set '(.*)' as postalcode on Checkout page$")
+    public void iSetPostalcode(String postalcode) {
+        sendKeys(By.id("postalCode"), postalcode);
+    }
+
+    @And("^I set '(.*)' as email on Checkout page$")
+    public void iSetEmail(String email) {
+        sendKeys(By.id("email"), email);
+    }
+
+    @And("^I set '(.*)' as confirm email on Checkout page$")
+    public void iSetConfirmEmail(String confirmEmail) {
+        sendKeys(By.id("emailConfirm"), confirmEmail);
+    }
+
+    @And("^I set '(.*)' as phone number on Checkout page$")
+    public void iSetPhoneNumber(String phoneNumber) {
+        sendKeys(By.id("phoneNumber"), phoneNumber);
+    }
+
+    @And("^I press done button on Checkout page$")
+    public GuestCheckoutPage iPressDone() {
+        click(By.className("form-action ADD_ADDRESS_SUBMIT"));
+        return this;
+    }
 }

@@ -22,10 +22,17 @@ Feature: Add items to cart
     And I select '<country>' as ship country on Checkout page
     And I set '<firstName>' as first name on Checkout page
     And I set '<lastName>' as last name on Checkout page
-    And I set '<streetAddress>' as Street address on Checkout page
-
+    And I set '<streetAddress>' as street address on Checkout page
+    And I set '<city>' as city on Checkout page
+    And I select '<state>' as states on Checkout page
+    And I set '<zip code>' as postalcode on Checkout page
+    And I set '<email>' as email on Checkout page
+    And I set '<confirm email>' as confirm email on Checkout page
+    And I set '<phone number>' as phone number on Checkout page
+    And I press done button on Checkout page
 
     
   Scenarios:
-    | searchKeyword | itemName  | price | quantity| country | firstName | lastName| streetAddress|
-    | duracell      | 6 x 76A Duracell 1.5V Alkaline Button Batteries (LR44, A76, EPX76, PX76A, V136A) | 8.07 | 5 | Tajikistan | Jon|  Johnson | 1521 Ocean Avenue, B4|
+    | searchKeyword | itemName  | price | quantity| country | firstName |lastName| streetAddress| city | state| zip code|email|confirm email| phone number|
+    | duracell      | 6 x 76A Duracell 1.5V Alkaline Button Batteries (LR44, A76, EPX76, PX76A, V136A) | 8.97 | 5 | United States | Jon|  Johnson | 1521 Ocean Avenue, B4| Brooklyn| New York|11230|test@gmail.com|test@gmail.com| 3476349376|
+

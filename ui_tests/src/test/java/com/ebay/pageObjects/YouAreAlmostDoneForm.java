@@ -12,8 +12,9 @@ import static com.ebay.helpers.ElementsInteraction.getWait;
 public class YouAreAlmostDoneForm extends BasePage{
 
     public void isPageOpened(){
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='oly old']")));
         getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ADDON_0']/div/div[2]/div/div[4]/a")));
-    //(By.linkText("You're almost done"), "You're almost done"));
+            //(By.linkText("You're almost done"), "You're almost done"));
     }
 
     @Then("^I am on AlmostDone page$")
